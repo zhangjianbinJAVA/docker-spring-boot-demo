@@ -2,6 +2,7 @@ FROM java
 
 LABEL maintainer "misha"
 
+## 提取 docker-spring-boot-demo.jar  到 镜像的某个目录
 COPY /docker-spring-boot-demo/target/docker-spring-boot-demo.jar /usr/src/myapp/docker-spring-boot-demo.jar
 
 WORKDIR /usr/src/myapp/
