@@ -1,0 +1,9 @@
+FROM java
+
+LABEL maintainer "misha"
+
+COPY /docker-spring-boot-demo/target/docker-spring-boot-demo.jar /usr/src/myapp/docker-spring-boot-demo.jar
+
+WORKDIR /usr/src/myapp/
+
+ENTRYPOINT java -jar docker-spring-boot-demo.jar

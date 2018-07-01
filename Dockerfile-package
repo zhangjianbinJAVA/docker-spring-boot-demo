@@ -1,0 +1,11 @@
+# 在此我们推荐安全构建的方式，能够更好的保护您的源码。首先在应用根目录下建立 Dockerfile-package 文件，内容如下：
+
+FROM maven:3.5.0-jdk-8-alpine
+
+LABEL maintainer "misha"
+
+WORKDIR /docker-spring-boot-demo
+ADD . /docker-spring-boot-demo
+
+RUN mvn package -Dmaven.test.skip=true
+CMD ["mvn"]
