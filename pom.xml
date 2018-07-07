@@ -22,6 +22,12 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -47,20 +53,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
     </dependencies>
 
-    <repositories>
 
-        <!-- 可以设置多个repository，在实际的开发过程中会从中心仓库取到 -->
+    <repositories>
         <repository>
             <id>central</id>
-            <url>http://repo1.maven.org/maven2/</url>
             <url>http://nexus.daocloud.io/repository/maven-public/</url>
-        </repository>
-        <!-- 可以设置多个repository，在实际的开发过程中会从中心仓库取到 -->
-        <repository>
-            <id>central</id>
-            <url>http://repo1.maven.org/maven2/</url>
         </repository>
     </repositories>
 

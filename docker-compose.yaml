@@ -1,0 +1,19 @@
+# 用来提供 Web 服务
+web:
+ # 配置构建时的选项，Compose会利用它自动构建镜像
+  build: .
+  # 只指定容器端口
+  ports:
+    - "8080:8080"
+  # 连接到其他服务的容器
+  links:
+    - mongo:mongo
+  # 覆盖容器启动后默认执行的命令
+  cmmand: java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+
+# 用来提供 mongo 服务
+mongo:
+  image: daocloud.io/library/mongo:latest
+  # 只指定容器端口
+  ports:
+    - "27017:27017"
